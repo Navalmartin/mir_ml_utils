@@ -1,7 +1,7 @@
 import torch
 from torch import Tensor, nn
 
-from src.easyfsl.methods.few_shot_classifier import FewShotClassifier
+from .few_shot_classifier import FewShotClassifier
 
 
 class TIM(FewShotClassifier):

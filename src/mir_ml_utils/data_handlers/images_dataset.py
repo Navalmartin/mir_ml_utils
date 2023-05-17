@@ -7,8 +7,8 @@ import torch.utils.data as data
 
 from navalmartin_mir_vision_utils.mir_vision_io import LabeledImageDataset
 from navalmartin_mir_vision_utils.image_loaders import load_img
-from mir_ml_utils.utils.mode_enum import ModeEnum
-from mir_ml_utils.utils.exceptions import SizeMismatchException
+from ..utils.mode_enum import ModeEnum
+from ..utils.exceptions import SizeMismatchException
 
 
 class ImagesDataset(data.Dataset):

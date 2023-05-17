@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from src.easyfsl.datasets.easy_set import EasySet
-from src.easyfsl.datasets.few_shot_dataset import FewShotDataset
+from .easy_set import EasySet
+from .few_shot_dataset import FewShotDataset
 
 TIERED_IMAGENET_SPECS_DIR = Path("data/tiered_imagenet")
 

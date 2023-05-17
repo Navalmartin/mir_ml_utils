@@ -1,7 +1,7 @@
 from typing import Callable
 import torch
 from torchcam.methods import GradCAM
-from mir_ml_utils.utils.exceptions import SizeMismatchException
+from ..utils.exceptions import SizeMismatchException
 
 
 class ResNetPredictorWrapper(object):

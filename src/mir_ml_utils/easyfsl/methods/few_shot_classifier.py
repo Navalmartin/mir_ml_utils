@@ -3,7 +3,7 @@ from abc import abstractmethod
 import torch
 from torch import nn, Tensor
 
-from src.easyfsl.utils import compute_backbone_output_shape, compute_prototypes
+from src.mir_ml_utils.easyfsl.utils import compute_backbone_output_shape, compute_prototypes
 
 
 class FewShotClassifier(nn.Module):

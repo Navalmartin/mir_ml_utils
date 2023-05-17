@@ -8,11 +8,11 @@ from torch.utils.data import DataLoader
 from loguru import logger
 from pathlib import Path
 
-from mir_ml_utils.factories.model_adaptor_factory import model_adaptor_builder
-from mir_ml_utils.factories.model_builder_factory import model_loader
-from mir_ml_utils.trainers.model_trainer_type_enum import ModelTrainerTypeEnum
-from mir_ml_utils.models.model_adaptor_type_enum import ModelAdaptorTypeEnum
-from mir_ml_utils.models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
+from ..factories.model_adaptor_factory import model_adaptor_builder
+from ..factories.model_builder_factory import model_loader
+from ..trainers.model_trainer_type_enum import ModelTrainerTypeEnum
+from ..models.model_adaptor_type_enum import ModelAdaptorTypeEnum
+from ..models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
 from .inference_enum_types import InferenceTypeEnum
 
 

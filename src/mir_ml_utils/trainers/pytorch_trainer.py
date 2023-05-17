@@ -21,14 +21,14 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 
-import mir_ml_utils.mir_vision.references.detection.utils as mir_vision_utils
-from mir_ml_utils.mir_vision.references.detection.coco_eval import CocoEvaluator
-from mir_ml_utils.mir_vision.references.detection.engine import train_one_epoch, evaluate
-from mir_ml_utils.config import PYTORCH_MODEL_FILE_EXTENSION
-from mir_ml_utils.trainers.trainer_info import TrainInfo
-from mir_ml_utils.utils.function_wrappers import time_func_wrapper
-from mir_ml_utils.loss_functions.loss_function_result import LossFuncResult
-from mir_ml_utils.trainers.model_trainer_type_enum import ModelTrainerTypeEnum, VALID_TRAINERS
+import src.mir_ml_utils.mir_vision.references.detection.utils as mir_vision_utils
+from src.mir_ml_utils.mir_vision.references.detection.coco_eval import CocoEvaluator
+from src.mir_ml_utils.mir_vision.references.detection.engine import train_one_epoch, evaluate
+from src.mir_ml_utils.config import PYTORCH_MODEL_FILE_EXTENSION
+from src.mir_ml_utils.trainers.trainer_info import TrainInfo
+from src.mir_ml_utils.utils.function_wrappers import time_func_wrapper
+from src.mir_ml_utils.loss_functions.loss_function_result import LossFuncResult
+from src.mir_ml_utils.trainers.model_trainer_type_enum import ModelTrainerTypeEnum, VALID_TRAINERS
 
 
 @dataclass(init=True, repr=True)

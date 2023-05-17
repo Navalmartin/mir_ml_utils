@@ -10,8 +10,8 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 import cv2
 
-import src.data_handlers.img_utils as img_utils
-from src.models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
+import src.mir_ml_utils.data_handlers.img_utils as img_utils
+from ..models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
 
 
 class TwoClassPyTorchModelTester(object):

@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Union
 import torch.nn as nn
-from mir_ml_utils.models.model_loaders import ResNetModelLoader, ProtoNetModelLoader, MaskRCNNModelLoader
+from ..models.model_loaders import ResNetModelLoader, ProtoNetModelLoader, MaskRCNNModelLoader
 
 VALID_MODEL_BUILDERS = ['ResNet', 'ProtoNet', 'MaskRCNN']
 

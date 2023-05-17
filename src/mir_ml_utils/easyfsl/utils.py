@@ -4,12 +4,8 @@ This file is amended from https://github.com/sicara/easy-few-shot-learning
 
 """
 import copy
-from pathlib import Path
 from typing import List, Tuple, TypeVar, Union
 
-import torchvision
-from matplotlib import pyplot as plt
-import numpy as np
 import torch
 from torch import nn, Tensor
 from tqdm import tqdm

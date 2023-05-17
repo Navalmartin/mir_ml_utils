@@ -5,9 +5,9 @@ https://github.com/floodsung/LearningToCompare_FSL
 
 import torch
 from torch import nn, Tensor
-from src.easyfsl.methods.few_shot_classifier import FewShotClassifier
-from src.easyfsl.modules.predesigned_modules import default_relation_module
-from src.easyfsl.utils import compute_prototypes
+from few_shot_classifier import FewShotClassifier
+from src.mir_ml_utils.easyfsl.modules.predesigned_modules import default_relation_module
+from src.mir_ml_utils.easyfsl.utils import compute_prototypes
 
 
 class RelationNetworks(FewShotClassifier):

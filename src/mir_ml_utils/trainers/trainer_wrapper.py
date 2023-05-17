@@ -12,17 +12,17 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 from torchsummary import summary
 
-from mir_ml_utils.models import ModelAdaptorTypeEnum
-from mir_ml_utils.trainers.pytorch_trainer import PyTorchTrainer, PyTorchTrainerConfig
+from src.mir_ml_utils.models import ModelAdaptorTypeEnum
+from src.mir_ml_utils.trainers.pytorch_trainer import PyTorchTrainer, PyTorchTrainerConfig
 
-from mir_ml_utils.factories.optimzer_factory import build_optimizer
-from mir_ml_utils.factories.loss_function_factory import build_loss_function
-from mir_ml_utils.factories.model_builder_factory import model_builder
-from mir_ml_utils.loss_functions.loss_function_wrapper import LossFunctionWrapper
-from mir_ml_utils.factories.model_adaptor_factory import model_adaptor_builder
-from mir_ml_utils.utils.math_ops import set_seed
-from mir_ml_utils.trainers.trainer_wrapper_pimpl import TrainerWrapperPimpl
-from mir_ml_utils.trainers.model_trainer_type_enum import ModelTrainerTypeEnum
+from src.mir_ml_utils.factories.optimzer_factory import build_optimizer
+from src.mir_ml_utils.factories.loss_function_factory import build_loss_function
+from src.mir_ml_utils.factories.model_builder_factory import model_builder
+from src.mir_ml_utils.loss_functions.loss_function_wrapper import LossFunctionWrapper
+from src.mir_ml_utils.factories.model_adaptor_factory import model_adaptor_builder
+from src.mir_ml_utils.utils.math_ops import set_seed
+from src.mir_ml_utils.trainers.trainer_wrapper_pimpl import TrainerWrapperPimpl
+from src.mir_ml_utils.trainers.model_trainer_type_enum import ModelTrainerTypeEnum
 
 
 class TrainerWrapper(object):

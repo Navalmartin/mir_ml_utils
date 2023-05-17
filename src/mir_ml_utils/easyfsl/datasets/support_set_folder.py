@@ -5,7 +5,7 @@ import torch
 from torch import Tensor
 from torchvision.datasets import ImageFolder
 
-from src.easyfsl.datasets.default_configs import default_transform
+from .default_configs import default_transform
 
 
 NOT_A_TENSOR_ERROR_MESSAGE = (

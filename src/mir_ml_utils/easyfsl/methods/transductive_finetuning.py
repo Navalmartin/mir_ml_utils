@@ -2,8 +2,8 @@ import torch
 from torch import Tensor, nn
 
 
-from src.easyfsl.methods.few_shot_classifier import FewShotClassifier
-from src.easyfsl.utils import entropy
+from .few_shot_classifier import FewShotClassifier
+from src.mir_ml_utils.easyfsl.utils import entropy
 
 
 class TransductiveFinetuning(FewShotClassifier):

@@ -8,19 +8,19 @@ import mlflow
 from sklearn.model_selection import train_test_split
 import numpy as np
 
-from mir_ml_utils.utils.mode_enum import ModeEnum
-import mir_ml_utils.data_handlers.img_utils as img_utils
-import mir_ml_utils.mir_vision.references.detection.utils as vision_utils
-from mir_ml_utils.mir_vision.references.detection.engine import evaluate
-from mir_ml_utils.utils.file_utils import create_dir
-from mir_ml_utils.utils.function_wrappers import time_func_wrapper
-from mir_ml_utils.testers.two_class_model_tester_wrapper import TwoClassPyTorchModelTester
-from mir_ml_utils.factories.model_adaptor_factory import model_adaptor_builder
-from mir_ml_utils.factories.model_builder_factory import model_loader
-from mir_ml_utils.utils.file_utils import save_as_pickle, save_list_as_csv
-from mir_ml_utils.data_handlers.dataset_with_masks import DatasetWithMasks
-from mir_ml_utils.data_handlers.images_dataset import ImagesDataset
-from mir_ml_utils.easyfsl.samplers.task_sampler import TaskSampler
+from src.mir_ml_utils.utils.mode_enum import ModeEnum
+import src.mir_ml_utils.data_handlers.img_utils as img_utils
+import src.mir_ml_utils.mir_vision.references.detection.utils as vision_utils
+from src.mir_ml_utils.mir_vision.references.detection.engine import evaluate
+from src.mir_ml_utils.utils.file_utils import create_dir
+from src.mir_ml_utils.utils.function_wrappers import time_func_wrapper
+from src.mir_ml_utils.testers.two_class_model_tester_wrapper import TwoClassPyTorchModelTester
+from src.mir_ml_utils.factories.model_adaptor_factory import model_adaptor_builder
+from src.mir_ml_utils.factories.model_builder_factory import model_loader
+from src.mir_ml_utils.utils.file_utils import save_as_pickle, save_list_as_csv
+from src.mir_ml_utils.data_handlers.dataset_with_masks import DatasetWithMasks
+from src.mir_ml_utils.data_handlers.images_dataset import ImagesDataset
+from src.mir_ml_utils.easyfsl.samplers.task_sampler import TaskSampler
 
 
 class TrainerWrapperPimpl(object):
