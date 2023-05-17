@@ -1,5 +1,7 @@
 [build-system]
-requires = ["hatchling", "numpy", "Pillow", "scipy", "scikit-image", "libsvm"]
+requires = ["hatchling", "torch", "torchvision", "numpy"
+	    "dataclasses", "Pillow", "matplotlib", "loguru", "opencv-python",
+            "torchcam", "torch-summary",  "tqdm", "pycocotools", "navalmartin-mir-vision-utils"]
 build-backend = "hatchling.build"
 [project]
 name = "mir_ml_utils"
@@ -7,7 +9,7 @@ version = "0.0.1"
 authors = [
   { name="Alexandros Giavaras", email="a.giavaras@gmail.com" },
 ]
-description = "Various utilities for working with images in Python 3. for the mir project"
+description = "Various utilities for machine learning training in Python 3. for the mir project"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
@@ -16,5 +18,5 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 [project.urls]
-"Homepage" = "https://github.com/Navalmartin/navalmartin_mir_vision_utils"
-"Bug Tracker" = "https://github.com/Navalmartin/navalmartin_mir_vision_utils/issues"
+"Homepage" = "https://github.com/Navalmartin/mir_ml_utils"
+"Bug Tracker" = "https://github.com/Navalmartin/mir_ml_utils/issues"
