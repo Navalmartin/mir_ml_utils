@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import DataLoader, Dataset
 from typing import Union, List, Tuple, Dict
 from loguru import logger
-from src.easyfsl.methods.prototypical_networks import PrototypicalNetworks
+from mir_ml_utils.easyfsl.methods.prototypical_networks import PrototypicalNetworks
 
 
 def _init_class_dict(classes: List[int]) -> Dict:

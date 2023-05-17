@@ -1,7 +1,8 @@
 from typing import Any
 from typing import Callable
 
-from src.loss_functions.loss_function_result import LossFuncResult
+from .loss_function_result import LossFuncResult
+
 
 class LossFunctionWrapper(object):
 

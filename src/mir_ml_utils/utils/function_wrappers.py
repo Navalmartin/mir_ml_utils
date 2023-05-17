@@ -3,7 +3,7 @@ from typing import Callable
 import time
 from loguru import logger
 
-from src.utils.file_utils import INFO
+from .file_utils import INFO
 
 
 def time_func(fn: Callable):

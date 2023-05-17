@@ -7,9 +7,9 @@ from typing import List, Callable, Any
 import torch
 import torch.utils.data as data
 
-from src.data_handlers.img_utils import load_img, load_image_as_numpy, load_image_pytorch_tensor
-from src.utils.mode_enum import ModeEnum
-from src.utils.exceptions import SizeMismatchException
+from navalmartin_mir_vision_utils.image_loaders import (load_img, load_image_as_numpy, load_image_pytorch_tensor)
+from mir_ml_utils.utils.mode_enum import ModeEnum
+from mir_ml_utils.utils.exceptions import SizeMismatchException
 
 
 class DatasetWithMasks(data.Dataset):

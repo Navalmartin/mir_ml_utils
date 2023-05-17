@@ -1,8 +1,8 @@
 
 from typing import Union
 
-from src.models.model_adaptor import AddFlattenLayerAdaptor, AddLinearLayerAdaptor, ComposedAdaptor, AdaptorBase
-from src.models.model_adaptor_type_enum import ModelAdaptorTypeEnum
+from mir_ml_utils.models.model_adaptor import AddFlattenLayerAdaptor, AddLinearLayerAdaptor, ComposedAdaptor, AdaptorBase
+from mir_ml_utils.models.model_adaptor_type_enum import ModelAdaptorTypeEnum
 
 
 def model_adaptor_builder(adaptor_type: Union[str | ModelAdaptorTypeEnum],
