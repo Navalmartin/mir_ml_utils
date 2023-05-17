@@ -11,3 +11,4 @@ torchcam
 torch-summary
 tqdm
 pycocotools
+navalmartin_mir_vision_utils
