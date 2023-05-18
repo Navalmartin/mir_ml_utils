@@ -1,8 +1,29 @@
-[![mir (Marine Inspection by Remote)](https://github.com/pockerman/mir/actions/workflows/python-app.yml/badge.svg)](https://github.com/pockerman/mir/actions/workflows/python-app.yml)
 
-# mir-ml-engine
+
+# mir-ml-utils
 
 The ML engine for the mir (Marine Inspection by Remote) app.
+
+## Install
+
+You can install the utilities via ```pip```
+
+```
+pip install mir-ml-utils
+```
+
+For a specific version use
+
+```
+pip install mir-ml-utils==x.x.x
+```
+
+You can uninstall the project via
+
+```
+pip3 uninstall mir-ml-utils
+```
+
 
 ## Dependencies
 
@@ -27,7 +48,7 @@ There are additional dependencies if you want to run the tests
 
 In order to test locally, you can run the
 
-```commandline
+```
 local_test_pipeline.sh
 ```
 

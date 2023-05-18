@@ -9,9 +9,9 @@ from torch import Tensor
 import torch.nn as nn
 from tqdm import tqdm
 
-from src.easyfsl.methods.few_shot_classifier import FewShotClassifier
-from src.easyfsl.utils import compute_prototypes
-from src.loss_functions.loss_function_wrapper import LossFunctionWrapper
+from mir_ml_utils.easyfsl.methods.few_shot_classifier import FewShotClassifier
+from mir_ml_utils.easyfsl.utils import compute_prototypes
+from mir_ml_utils.loss_functions.loss_function_wrapper import LossFunctionWrapper
 
 
 class PrototypicalNetworks(FewShotClassifier):

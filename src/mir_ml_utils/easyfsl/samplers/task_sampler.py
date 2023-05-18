@@ -5,7 +5,7 @@ import torch
 from torch import Tensor
 from torch.utils.data import Sampler
 
-from src.easyfsl.datasets.few_shot_dataset import FewShotDataset
+from mir_ml_utils.easyfsl.datasets.few_shot_dataset import FewShotDataset
 
 
 class TaskSampler(Sampler):

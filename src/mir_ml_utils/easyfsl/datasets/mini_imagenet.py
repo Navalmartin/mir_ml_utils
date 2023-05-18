@@ -9,8 +9,8 @@ import torch
 from torch import Tensor
 from tqdm import tqdm
 
-from src.easyfsl.datasets.few_shot_dataset import FewShotDataset
-from src.easyfsl.datasets.default_configs import (
+from mir_ml_utils.easyfsl.datasets.few_shot_dataset import FewShotDataset
+from mir_ml_utils.easyfsl.datasets.default_configs import (
     default_mini_imagenet_loading_transform,
     default_mini_imagenet_serving_transform,
     default_transform,

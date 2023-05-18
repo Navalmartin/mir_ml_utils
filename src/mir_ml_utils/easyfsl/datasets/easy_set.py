@@ -5,8 +5,8 @@ from typing import List, Union, Set, Tuple, Callable
 
 from PIL import Image
 
-from src.easyfsl.datasets.few_shot_dataset import FewShotDataset
-from src.easyfsl.datasets.default_configs import default_transform, DEFAULT_IMAGE_FORMATS
+from mir_ml_utils.easyfsl.datasets.few_shot_dataset import FewShotDataset
+from mir_ml_utils.easyfsl.datasets.default_configs import default_transform, DEFAULT_IMAGE_FORMATS
 
 
 class EasySet(FewShotDataset):

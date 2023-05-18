@@ -1,7 +1,7 @@
 from torch import nn
 from torchvision.models.resnet import BasicBlock, Bottleneck
 
-from src.easyfsl.modules.resnet import ResNet
+from mir_ml_utils.easyfsl.modules.resnet import ResNet
 
 __all__ = [
     "resnet10",

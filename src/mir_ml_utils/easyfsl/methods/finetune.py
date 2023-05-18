@@ -2,7 +2,7 @@ import torch
 from torch import Tensor, nn
 
 
-from src.easyfsl.methods.few_shot_classifier import FewShotClassifier
+from mir_ml_utils.easyfsl.methods.few_shot_classifier import FewShotClassifier
 
 
 class Finetune(FewShotClassifier):
