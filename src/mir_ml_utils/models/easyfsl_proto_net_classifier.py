@@ -130,10 +130,12 @@ class EasyFSLProtoNetClassifier(PrototypicalNetworks):
         return best_prototypes, test_accuracy, batch_monitors
 
     def __init__(self, backbone: nn.Module, model_name: str,
-                 device: str, use_softmax: bool = True):
+                 device: str, use_softmax: bool = True,
+                 prototypes: torch.Tensor = None):
         super(EasyFSLProtoNetClassifier, self).__init__(backbone, use_softmax=use_softmax)
         self.name = model_name
         self.device = device
+        self.prototypes = prototypes
 
     def load_prototypes(self, prototypes_paths: Path, device: str) -> None:
         """Load the prototypes from the given paths
