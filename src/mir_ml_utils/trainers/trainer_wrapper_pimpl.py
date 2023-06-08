@@ -8,8 +8,11 @@ import mlflow
 from sklearn.model_selection import train_test_split
 import numpy as np
 
+import navalmartin_mir_vision_utils.image_utils as img_utils
+from navalmartin_mir_vision_utils.image_loaders import (load_img,
+                                                        load_image_as_numpy)
+
 from mir_ml_utils.utils.mode_enum import ModeEnum
-import mir_ml_utils.data_handlers.img_utils as img_utils
 import mir_ml_utils.mir_vision.references.detection.utils as vision_utils
 from mir_ml_utils.mir_vision.references.detection.engine import evaluate
 from mir_ml_utils.utils.file_utils import create_dir
@@ -216,14 +219,11 @@ class TrainerWrapperPimpl(object):
         if self.config["data_type"] == "images":
 
             # let's get all the files
-            train_class_0_data = img_utils.get_img_files(img_dir=class_0_path,
-                                                         img_formats=['jpg', 'png', 'jpeg'],
-                                                         with_batch_structure=self.config['with_batches'])
+            train_class_0_data = img_utils.get_img_files(base_path=class_0_path,
+                                                         img_formats=['jpg', 'png', 'jpeg'])
 
-            train_class_1_data = img_utils.get_img_files(img_dir=class_1_path,
-                                                         img_formats=['jpg', 'png', 'jpeg'],
-                                                         with_batch_structure=self.config['with_batches']
-                                                         )
+            train_class_1_data = img_utils.get_img_files(base_path=class_1_path,
+                                                         img_formats=['jpg', 'png', 'jpeg'])
 
             if self.config['train_options']['max_train_size'] != 'all':
                 logger.info(f"Limiting train data to size={self.config['train_options']['max_train_size']}")
@@ -321,14 +321,11 @@ class TrainerWrapperPimpl(object):
         if self.config["data_type"] == "images":
 
             # let's get all the files
-            train_class_0_data = img_utils.get_img_files(img_dir=class_0_path,
-                                                         img_formats=['jpg', 'png', 'jpeg'],
-                                                         with_batch_structure=self.config['with_batches'])
+            train_class_0_data = img_utils.get_img_files(base_path=class_0_path,
+                                                         img_formats=['jpg', 'png', 'jpeg'])
 
-            train_class_1_data = img_utils.get_img_files(img_dir=class_1_path,
-                                                         img_formats=['jpg', 'png', 'jpeg'],
-                                                         with_batch_structure=self.config['with_batches']
-                                                         )
+            train_class_1_data = img_utils.get_img_files(base_path=class_1_path,
+                                                         img_formats=['jpg', 'png', 'jpeg'])
 
             if self.config['train_options']['max_train_size'] != 'all':
                 logger.info(f"Limiting train data to size={self.config['train_options']['max_train_size']}")
@@ -428,9 +425,8 @@ class TrainerWrapperPimpl(object):
         masks_format = self.config["masks_format"]
 
         # let's get all the files
-        images_filename = img_utils.get_img_files(img_dir=images_path,
-                                                  img_formats=['jpg', 'png', 'jpeg'],
-                                                  with_batch_structure=self.config['with_batches'])
+        images_filename = img_utils.get_img_files(base_path=images_path,
+                                                  img_formats=['jpg', 'png', 'jpeg'])
 
         if self.config['train_options']['max_train_size'] != 'all':
             logger.info(f"Limiting train data to size={self.config['train_options']['max_train_size']}")
@@ -466,7 +462,7 @@ class TrainerWrapperPimpl(object):
                                                        masks_filenames=mask_train_files,
                                                        labels=[],  # x_train_labels,
                                                        mode=ModeEnum.TRAIN,
-                                                       image_loader=img_utils.load_img,
+                                                       image_loader=load_img,
                                                        mask_loader=img_utils.load_image_as_numpy,
                                                        on_load_transformers=train_transformers,
                                                        on_load_transformers_mask=masks_transformers,
@@ -476,7 +472,7 @@ class TrainerWrapperPimpl(object):
                                                      masks_filenames=mask_validate_files,
                                                      labels=[],  # x_val_labels,
                                                      mode=ModeEnum.VALIDATE,
-                                                     image_loader=img_utils.load_img,
+                                                     image_loader=load_img,
                                                      mask_loader=img_utils.load_image_as_numpy,
                                                      on_load_transformers=val_transformers,
                                                      on_load_transformers_mask=masks_transformers,
@@ -508,15 +504,11 @@ class TrainerWrapperPimpl(object):
 
         if self.config["data_type"] == "images":
             # let's get all the files
-            test_class_0_data = img_utils.get_img_files(img_dir=class_0_path,
-                                                        img_formats=['jpg', 'png', 'jpeg'],
-                                                        with_batch_structure=self.config['with_batches']
-                                                        )
+            test_class_0_data = img_utils.get_img_files(base_path=class_0_path,
+                                                        img_formats=['jpg', 'png', 'jpeg'])
 
-            test_class_1_data = img_utils.get_img_files(img_dir=class_1_path,
-                                                        img_formats=['jpg', 'png', 'jpeg'],
-                                                        with_batch_structure=self.config['with_batches']
-                                                        )
+            test_class_1_data = img_utils.get_img_files(base_path=class_1_path,
+                                                        img_formats=['jpg', 'png', 'jpeg'])
 
             if self.config['test_options']['max_test_size'] != 'all':
                 logger.info(f"Limiting test data to size={self.config['train_options']['max_train_size']}")
@@ -560,9 +552,8 @@ class TrainerWrapperPimpl(object):
         masks_path = Path(self.config['masks_dir'])
 
         # let's get all the files
-        images_filename = img_utils.get_img_files(img_dir=images_path,
-                                                  img_formats=['jpg', 'png', 'jpeg'],
-                                                  with_batch_structure=self.config['with_batches'])
+        images_filename = img_utils.get_img_files(base_path=images_path,
+                                                  img_formats=['jpg', 'png', 'jpeg'])
 
         logger.info(f"Number of train {self.config['class_0_name']} images {len(images_filename)}")
 
@@ -581,8 +572,8 @@ class TrainerWrapperPimpl(object):
                                                       masks_filenames=mask_test_files,
                                                       labels=[1] * len(test_files),
                                                       mode=ModeEnum.TEST,
-                                                      image_loader=img_utils.load_img,
-                                                      mask_loader=img_utils.load_image_as_numpy,
+                                                      image_loader=load_img,
+                                                      mask_loader=load_image_as_numpy,
                                                       on_load_transformers=test_transformers,
                                                       on_load_transformers_mask=mask_transformers)
 
@@ -605,15 +596,11 @@ class TrainerWrapperPimpl(object):
 
         if self.config["data_type"] == "images":
             # let's get all the files
-            test_class_0_data = img_utils.get_img_files(img_dir=class_0_path,
-                                                        img_formats=['jpg', 'png', 'jpeg'],
-                                                        with_batch_structure=self.config['with_batches']
-                                                        )
+            test_class_0_data = img_utils.get_img_files(base_path=class_0_path,
+                                                        img_formats=['jpg', 'png', 'jpeg'])
 
-            test_class_1_data = img_utils.get_img_files(img_dir=class_1_path,
-                                                        img_formats=['jpg', 'png', 'jpeg'],
-                                                        with_batch_structure=self.config['with_batches']
-                                                        )
+            test_class_1_data = img_utils.get_img_files(base_path=class_1_path,
+                                                        img_formats=['jpg', 'png', 'jpeg'])
 
             if self.config['test_options']['max_test_size'] != 'all':
                 logger.info(f"Limiting test data to size={self.config['test_options']['max_test_size']}")

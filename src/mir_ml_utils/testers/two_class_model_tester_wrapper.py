@@ -10,8 +10,8 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 import cv2
 
-import src.data_handlers.img_utils as img_utils
-from src.models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
+import navalmartin_mir_vision_utils.image_utils as img_utils
+from mir_ml_utils.models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
 
 
 class TwoClassPyTorchModelTester(object):
@@ -54,10 +54,10 @@ class TwoClassPyTorchModelTester(object):
     def build_simple_segmentation(model: nn.Module, options: dict):
 
         # get the images
-        test_class_0_images = img_utils.get_img_files(img_dir=options['test_class_0_images_path'],
+        test_class_0_images = img_utils.get_img_files(base_path=options['test_class_0_images_path'],
                                                       img_formats=['jpg', 'png', 'jpeg'])
 
-        test_class_1_images = img_utils.get_img_files(img_dir=options['test_class_1_images_path'],
+        test_class_1_images = img_utils.get_img_files(base_path=options['test_class_1_images_path'],
                                                       img_formats=['jpg', 'png', 'jpeg'])
 
         images = test_class_1_images + test_class_0_images

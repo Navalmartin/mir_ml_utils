@@ -13,7 +13,7 @@ from mir_ml_utils.factories.model_builder_factory import model_loader
 from mir_ml_utils.trainers.model_trainer_type_enum import ModelTrainerTypeEnum
 from mir_ml_utils.models.model_adaptor_type_enum import ModelAdaptorTypeEnum
 from mir_ml_utils.models.easyfsl_proto_net_classifier import EasyFSLProtoNetClassifier
-from .inference_enum_types import InferenceTypeEnum
+from mir_ml_utils.testers.inference_enum_types import InferenceTypeEnum
 
 
 def _init_class_dict(classes: List[str]):
