@@ -24,6 +24,8 @@ class FewShotClassifier(nn.Module):
         super().__init__()
 
         self.backbone: nn.Module = backbone
+
+        # this may not work for Prototypical networks
         self.backbone_output_shape = compute_backbone_output_shape(backbone)
         self.feature_dimension = self.backbone_output_shape[0]
 

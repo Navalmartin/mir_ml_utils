@@ -10,9 +10,9 @@ from typing import TypeVar
 
 import torch
 import torchvision.models.detection.mask_rcnn
-import src.mir_vision.references.detection.utils as utils
-from src.mir_vision.references.detection.coco_eval import CocoEvaluator
-from src.mir_vision.references.detection.coco_utils import get_coco_api_from_dataset
+import utils
+from coco_eval import CocoEvaluator
+from coco_utils import get_coco_api_from_dataset
 
 
 MetricLogger = TypeVar('MetricLogger')
