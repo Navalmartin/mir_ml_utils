@@ -11,8 +11,8 @@ from typing import TypeVar
 import torch
 import torchvision.models.detection.mask_rcnn
 import utils
-from coco_eval import CocoEvaluator
-from coco_utils import get_coco_api_from_dataset
+from mir_ml_utils.mir_vision.references.detection.coco_eval import CocoEvaluator
+from mir_ml_utils.mir_vision.references.detection.coco_utils import get_coco_api_from_dataset
 
 
 MetricLogger = TypeVar('MetricLogger')

@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import torch
 import random
 
-from file_utils import load_list_from_csv
-from exceptions import SizeMismatchException
+from mir_ml_utils.utils.file_utils import load_list_from_csv
+from mir_ml_utils.utils.exceptions import SizeMismatchException
 
 
 def set_seed(seed: int) -> None:
