@@ -65,28 +65,37 @@ class TestWrapper(object):
         self.device = 'cuda:0' if torch.cuda.is_available() and self.config['train_options']['use_cuda'] else 'cpu'
         self.simulation_data_dir_output: Path = self.config['run_dir_output'] / self.config['run_name']
 
+    def build_test_model(self):
+        """Build the model to be tested
+
+        Returns
+        -------
+
+        """
+        model_adaptor_options = {"n_classes": self.config['train_options']['n_classes']}
+
+        if self.config['test_options']['model_adaptor']['name'] != ModelAdaptorTypeEnum.NONE:
+            model_adaptor_options.update(self.config['test_options']['model_adaptor']["properties"])
+
+        model_adaptor = model_adaptor_builder(
+            adaptor_type=self.config['test_options']['model_adaptor']['name'],
+            options=model_adaptor_options)
+        model = model_loader(builder_name=self.config['train_options']['model_builder_factory'],
+                             config={'model_type': self.config['train_options']['model_type'],
+                                     'model_path': self.simulation_data_dir_output / self.config['best_model_name'],
+                                     'model_adaptor': model_adaptor,
+                                     'device': self.device,
+                                     'with_pretrained': self.config['train_options']['with_pretrained'],
+                                     'freeze_model_parameters': self.config['train_options'][
+                                         'freeze_model_parameters']})
+        return model
+
     def run_test_classification_model(self, model: nn.Module = None,
                                       test_dataset: DataLoader = None):
 
         if model is None:
             logger.warning("Model is None loading model from config file")
-
-            model_adaptor_options = {"n_classes": self.config['train_options']['n_classes']}
-
-            if self.config['test_options']['model_adaptor']['name'] != ModelAdaptorTypeEnum.NONE:
-                model_adaptor_options.update(self.config['test_options']['model_adaptor']["properties"])
-
-            model_adaptor = model_adaptor_builder(
-                adaptor_type=self.config['test_options']['model_adaptor']['name'],
-                options=model_adaptor_options)
-            model = model_loader(builder_name=self.config['train_options']['model_builder_factory'],
-                                 config={'model_type': self.config['train_options']['model_type'],
-                                         'model_path': self.simulation_data_dir_output / self.config['best_model_name'],
-                                         'model_adaptor': model_adaptor,
-                                         'device': self.device,
-                                         'with_pretrained': self.config['train_options']['with_pretrained'],
-                                         'freeze_model_parameters': self.config['train_options'][
-                                             'freeze_model_parameters']})
+            model = self.build_test_model()
 
         # set the model to eval mode so that no
         # gradient claculation is performed
