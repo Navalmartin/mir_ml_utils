@@ -405,9 +405,9 @@ class PyTorchTrainer(object):
                                epoch_accuracy: List[float], train_loss: List[float],
                                train_acc: List[float], **kwargs):
 
-        for batch, x, y in tqdm(enumerate(train_data),
-                                total=len(train_data),
-                                desc="Training"):  # enumerate(train_data, 0):
+        for batch, (x, y) in tqdm(enumerate(train_data),
+                         total=len(train_data),
+                         desc="Training"):  # enumerate(train_data, 0):
 
             # get the inputs; datasets is a list of [inputs, labels]
             x, y = x, y
